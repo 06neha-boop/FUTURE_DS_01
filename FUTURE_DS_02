@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
 # Data
 data = {
     'Customer_ID': list(range(1,21)),
