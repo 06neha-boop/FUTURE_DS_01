@@ -1,5 +1,4 @@
 #  Sales Data Analysis Project
-
 #  Detailed overview
 This project analyzes product-wise business revenue using Python.  
 It performs basic statistical analysis and visualizes the data using graphs.
