@@ -1,38 +1,24 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Data
-data = {
-    'Product': ['Laptop', 'Mobile', 'Tablet', 'Headphones', 'Smartwatch', 'Camera', 'Printer'],
-    'Total_Revenue': [50000, 80000, 30000, 20000, 25000, 40000, 15000]
-}
+products = ['Laptop', 'Mobile', 'Tablet', 'Headphones']
+revenue = [50000, 80000, 30000, 20000]
 
-df = pd.DataFrame(data)
+df = pd.DataFrame({
+    'Product': products,
+    'Revenue': revenue
+})
 
-# Analysis
-avg = df['Total_Revenue'].mean()
-max_val = df['Total_Revenue'].max()
-min_val = df['Total_Revenue'].min()
-
-# Colors list (safe method)
-colors = []
-for val in df['Total_Revenue']:
-    if val == max_val:
-        colors.append('green')
-    elif val == min_val:
-        colors.append('red')
-    else:
-        colors.append('blue')
-
-# Graph
-plt.figure(figsize=(9,5))
-plt.bar(df['Product'], df['Total_Revenue'], color=colors)
-
-# Average line
-plt.axhline(y=avg, linestyle='--')
-plt.title("Sales Performance with High-Low Range")
+# Bar Graph
+plt.figure()
+plt.bar(df['Product'], df['Revenue'])
+plt.title("Bar Graph - Product vs Revenue")
 plt.xlabel("Products")
 plt.ylabel("Revenue")
-plt.xticks(rotation=30)
+plt.show()
 
+# Pie Chart
+plt.figure()
+plt.pie(df['Revenue'], labels=df['Product'], autopct='%1.1f%%')
+plt.title("Revenue Distribution")
 plt.show()
